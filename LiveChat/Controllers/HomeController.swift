@@ -13,10 +13,18 @@ class HomeController: UIViewController {
     let cardsDeckView = UIView()
     let buttonsStackView = HomeBottomsControlsStackView()
     
-    let cardViewModels = [
-        User(name: "Kelly", age: 23, profession: "Teacher", imageName: "kelly3").toCardViewModel(),
-        User(name: "Jane", age: 18, profession: "Developer", imageName: "jane3").toCardViewModel()
-    ]
+    let cardViewModels: [CardViewModel] = {
+        let producers = [
+            User(name: "Kelly", age: 23, profession: "Teacher", imageNames: ["kelly1", "kelly2", "kelly3"]),
+            User(name: "Jane", age: 18, profession: "Developer", imageNames: ["jane1", "jane2", "jane3"]),
+            Advertiser(title: "Slide Out", brandName: "öylesine bişeyler", posterPhotoName: "slide_out_menu_poster")
+        ] as [ProducesCardViewModel]
+        
+        let viewModels = producers.map( { return $0.toCardViewModel() } )
+        return viewModels
+    }()
+        
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +35,7 @@ class HomeController: UIViewController {
     fileprivate func setupDummyCards() {
         cardViewModels.forEach { (cardVM) in
             let cardView = CardView(frame: .zero)
-            cardView.imageView.image = UIImage(named: cardVM.imageName)
-            cardView.informationLabel.attributedText = cardVM.attributedString
-            cardView.informationLabel.textAlignment = cardVM.textAlignment
+            cardView.cardViewModel = cardVM
             cardsDeckView.addSubview(cardView)//görüntü üzerine görüntü ekledik
             cardView.fillSuperview()
         }
