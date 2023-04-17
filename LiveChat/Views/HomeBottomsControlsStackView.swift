@@ -9,7 +9,6 @@ import UIKit
 
 class HomeBottomsControlsStackView: UIStackView {
     
-    
     static func createButton(image: UIImage) -> UIButton {
         let button = UIButton(type: .system)
         button.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
@@ -29,11 +28,8 @@ class HomeBottomsControlsStackView: UIStackView {
         heightAnchor.constraint(equalToConstant: 120).isActive = true
   
         // bottom row of buttons
-       
         [refreshButton, dislikeButton, superLikeButton, likeButton, specialButton].forEach { (button) in
-            
             self.addArrangedSubview(button)
-            
         }
        
     }

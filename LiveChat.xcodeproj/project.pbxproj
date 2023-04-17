@@ -7,7 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6872B1E46551B785D2A2A1AB /* Pods_LiveChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE848A07785BCE233F8579CA /* Pods_LiveChat.framework */; };
+		7F063E9729E4A10200AEFD20 /* SwipingPhotosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F063E9629E4A10200AEFD20 /* SwipingPhotosController.swift */; };
+		7F0A748229E58A52005AFD42 /* photo_placeholder.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A748129E58A52005AFD42 /* photo_placeholder.jpg */; };
+		7F0A748629E719B2005AFD42 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A748529E719B2005AFD42 /* MatchView.swift */; };
+		7F0A748829E80E19005AFD42 /* SendMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A748729E80E19005AFD42 /* SendMessageButton.swift */; };
+		7F0A748A29E81013005AFD42 /* KeepSwipingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A748929E81013005AFD42 /* KeepSwipingButton.swift */; };
+		7F0A748D29EAD319005AFD42 /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A748C29EAD319005AFD42 /* LBTATools */; };
+		7F0A749029EAD3B3005AFD42 /* MatchesMessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A748F29EAD3B3005AFD42 /* MatchesMessagesController.swift */; };
+		7F0A749229EAE144005AFD42 /* MatchesNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A749129EAE144005AFD42 /* MatchesNavBar.swift */; };
+		7F0A749429EC18DD005AFD42 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A749329EC18DD005AFD42 /* ChatLogController.swift */; };
+		7F0A749729EC1F09005AFD42 /* MessagesNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A749629EC1F09005AFD42 /* MessagesNavBar.swift */; };
+		7F0A749929EC39A4005AFD42 /* AnchoredConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A749829EC39A4005AFD42 /* AnchoredConst.swift */; };
+		7F0A749B29EC4334005AFD42 /* CustomInputMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A749A29EC4334005AFD42 /* CustomInputMessageView.swift */; };
+		7F4BB190295889C3006586D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F4BB18F295889C3006586D3 /* GoogleService-Info.plist */; };
+		7F5E601B29DEC38B00C02C70 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5E601A29DEC38B00C02C70 /* LoginController.swift */; };
+		7F5E601D29DEC85100C02C70 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5E601C29DEC85100C02C70 /* LoginViewModel.swift */; };
+		7F5E602229E1928C00C02C70 /* UserDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5E602129E1928C00C02C70 /* UserDetailsController.swift */; };
+		7F734A002958DA9900840BBC /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7349FF2958DA9900840BBC /* Bindable.swift */; };
 		7F822A242954BF2A00470B80 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F822A232954BF2A00470B80 /* Advertiser.swift */; };
+		7F977DB229D83711001A3FC1 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F977DB129D83711001A3FC1 /* SettingsController.swift */; };
+		7F977DB429D9AE26001A3FC1 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F977DB329D9AE26001A3FC1 /* SettingsCell.swift */; };
+		7F9DC8E329579E020040FE9D /* RegistirationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DC8E229579E020040FE9D /* RegistirationViewModel.swift */; };
 		7FA03554295395F5003E07BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA03553295395F4003E07BB /* User.swift */; };
 		7FA035582953A67F003E07BB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA035572953A67F003E07BB /* CardViewModel.swift */; };
 		7FCBBB2429521C110041BA3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2329521C110041BA3E /* AppDelegate.swift */; };
@@ -16,14 +37,35 @@
 		7FCBBB2B29521C110041BA3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2929521C110041BA3E /* Main.storyboard */; };
 		7FCBBB2D29521C130041BA3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2C29521C130041BA3E /* Assets.xcassets */; };
 		7FCBBB3029521C130041BA3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2E29521C130041BA3E /* LaunchScreen.storyboard */; };
-		7FCBBB3929521D880041BA3E /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB3829521D880041BA3E /* Extensions+UIView.swift */; };
 		7FCBBB3C2952239B0041BA3E /* HomeBottomsControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB3B2952239B0041BA3E /* HomeBottomsControlsStackView.swift */; };
 		7FCBBB3E29522C8E0041BA3E /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB3D29522C8E0041BA3E /* TopNavigationStackView.swift */; };
 		7FCBBB402952372F0041BA3E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB3F2952372F0041BA3E /* CardView.swift */; };
+		7FE1507829DC346B0028A7EA /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1507729DC346B0028A7EA /* AgeRangeCell.swift */; };
+		7FEC73B429560B4D00717F2D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC73B329560B4D00717F2D /* RegistrationController.swift */; };
+		7FEC73B6295617D000717F2D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC73B5295617D000717F2D /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F063E9629E4A10200AEFD20 /* SwipingPhotosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipingPhotosController.swift; sourceTree = "<group>"; };
+		7F0A748129E58A52005AFD42 /* photo_placeholder.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo_placeholder.jpg; sourceTree = "<group>"; };
+		7F0A748529E719B2005AFD42 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		7F0A748729E80E19005AFD42 /* SendMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageButton.swift; sourceTree = "<group>"; };
+		7F0A748929E81013005AFD42 /* KeepSwipingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepSwipingButton.swift; sourceTree = "<group>"; };
+		7F0A748F29EAD3B3005AFD42 /* MatchesMessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesMessagesController.swift; sourceTree = "<group>"; };
+		7F0A749129EAE144005AFD42 /* MatchesNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesNavBar.swift; sourceTree = "<group>"; };
+		7F0A749329EC18DD005AFD42 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		7F0A749629EC1F09005AFD42 /* MessagesNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesNavBar.swift; sourceTree = "<group>"; };
+		7F0A749829EC39A4005AFD42 /* AnchoredConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchoredConst.swift; sourceTree = "<group>"; };
+		7F0A749A29EC4334005AFD42 /* CustomInputMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputMessageView.swift; sourceTree = "<group>"; };
+		7F4BB18F295889C3006586D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F5E601A29DEC38B00C02C70 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7F5E601C29DEC85100C02C70 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7F5E602129E1928C00C02C70 /* UserDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsController.swift; sourceTree = "<group>"; };
+		7F7349FF2958DA9900840BBC /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		7F822A232954BF2A00470B80 /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		7F977DB129D83711001A3FC1 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		7F977DB329D9AE26001A3FC1 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		7F9DC8E229579E020040FE9D /* RegistirationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationViewModel.swift; sourceTree = "<group>"; };
 		7FA03553295395F4003E07BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FA035572953A67F003E07BB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		7FCBBB2029521C110041BA3E /* LiveChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +76,15 @@
 		7FCBBB2C29521C130041BA3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FCBBB2F29521C130041BA3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FCBBB3129521C130041BA3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FCBBB3829521D880041BA3E /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		7FCBBB3B2952239B0041BA3E /* HomeBottomsControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomsControlsStackView.swift; sourceTree = "<group>"; };
 		7FCBBB3D29522C8E0041BA3E /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		7FCBBB3F2952372F0041BA3E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		7FE1507729DC346B0028A7EA /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
+		7FEC73B329560B4D00717F2D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		7FEC73B5295617D000717F2D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		AE848A07785BCE233F8579CA /* Pods_LiveChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiveChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1C25E0DCA8FF879B7B6F69B /* Pods-LiveChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveChat.debug.xcconfig"; path = "Target Support Files/Pods-LiveChat/Pods-LiveChat.debug.xcconfig"; sourceTree = "<group>"; };
+		F7610FA04734BE59B33061EC /* Pods-LiveChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiveChat.release.xcconfig"; path = "Target Support Files/Pods-LiveChat/Pods-LiveChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +92,76 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6872B1E46551B785D2A2A1AB /* Pods_LiveChat.framework in Frameworks */,
+				7F0A748D29EAD319005AFD42 /* LBTATools in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B7625F1056939138D5735A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1C25E0DCA8FF879B7B6F69B /* Pods-LiveChat.debug.xcconfig */,
+				F7610FA04734BE59B33061EC /* Pods-LiveChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		76C432476E6FA1D55C79B9DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE848A07785BCE233F8579CA /* Pods_LiveChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F0A748E29EAD36F005AFD42 /* MatchesMessages */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A748F29EAD3B3005AFD42 /* MatchesMessagesController.swift */,
+				7F0A749329EC18DD005AFD42 /* ChatLogController.swift */,
+			);
+			path = MatchesMessages;
+			sourceTree = "<group>";
+		};
+		7F0A749529EC1EE0005AFD42 /* MatchesMessages */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A749629EC1F09005AFD42 /* MessagesNavBar.swift */,
+				7F0A749A29EC4334005AFD42 /* CustomInputMessageView.swift */,
+			);
+			path = MatchesMessages;
+			sourceTree = "<group>";
+		};
+		7F5E601E29E1924700C02C70 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7F5E601C29DEC85100C02C70 /* LoginViewModel.swift */,
+				7F5E601A29DEC38B00C02C70 /* LoginController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7F5E601F29E1925700C02C70 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				7F9DC8E229579E020040FE9D /* RegistirationViewModel.swift */,
+				7FEC73B329560B4D00717F2D /* RegistrationController.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		7F5E602029E1927500C02C70 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7F5E602129E1928C00C02C70 /* UserDetailsController.swift */,
+				7F063E9629E4A10200AEFD20 /* SwipingPhotosController.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
 		7FA03552295395E9003E07BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,7 +174,13 @@
 		7FA035552953A65A003E07BB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A748E29EAD36F005AFD42 /* MatchesMessages */,
+				7F5E602029E1927500C02C70 /* UserDetails */,
+				7F5E601F29E1925700C02C70 /* Registration */,
+				7F5E601E29E1924700C02C70 /* Login */,
 				7FCBBB2729521C110041BA3E /* HomeController.swift */,
+				7F7349FF2958DA9900840BBC /* Bindable.swift */,
+				7F977DB129D83711001A3FC1 /* SettingsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +198,8 @@
 			children = (
 				7FCBBB2229521C110041BA3E /* LiveChat */,
 				7FCBBB2129521C110041BA3E /* Products */,
+				1B7625F1056939138D5735A6 /* Pods */,
+				76C432476E6FA1D55C79B9DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,8 +221,10 @@
 				7FCBBB3729521D640041BA3E /* Extensions */,
 				7FCBBB2329521C110041BA3E /* AppDelegate.swift */,
 				7FCBBB2529521C110041BA3E /* SceneDelegate.swift */,
+				7F4BB18F295889C3006586D3 /* GoogleService-Info.plist */,
 				7FCBBB2929521C110041BA3E /* Main.storyboard */,
 				7FCBBB2C29521C130041BA3E /* Assets.xcassets */,
+				7F0A748129E58A52005AFD42 /* photo_placeholder.jpg */,
 				7FCBBB2E29521C130041BA3E /* LaunchScreen.storyboard */,
 				7FCBBB3129521C130041BA3E /* Info.plist */,
 			);
@@ -113,7 +234,7 @@
 		7FCBBB3729521D640041BA3E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				7FCBBB3829521D880041BA3E /* Extensions+UIView.swift */,
+				7F0A749829EC39A4005AFD42 /* AnchoredConst.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -121,9 +242,17 @@
 		7FCBBB3A295223770041BA3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A749529EC1EE0005AFD42 /* MatchesMessages */,
 				7FCBBB3B2952239B0041BA3E /* HomeBottomsControlsStackView.swift */,
 				7FCBBB3D29522C8E0041BA3E /* TopNavigationStackView.swift */,
 				7FCBBB3F2952372F0041BA3E /* CardView.swift */,
+				7FEC73B5295617D000717F2D /* CustomTextField.swift */,
+				7F977DB329D9AE26001A3FC1 /* SettingsCell.swift */,
+				7FE1507729DC346B0028A7EA /* AgeRangeCell.swift */,
+				7F0A748529E719B2005AFD42 /* MatchView.swift */,
+				7F0A748729E80E19005AFD42 /* SendMessageButton.swift */,
+				7F0A748929E81013005AFD42 /* KeepSwipingButton.swift */,
+				7F0A749129EAE144005AFD42 /* MatchesNavBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,15 +264,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FCBBB3429521C130041BA3E /* Build configuration list for PBXNativeTarget "LiveChat" */;
 			buildPhases = (
+				F584B5C39D2CB8414BE08729 /* [CP] Check Pods Manifest.lock */,
 				7FCBBB1C29521C110041BA3E /* Sources */,
 				7FCBBB1D29521C110041BA3E /* Frameworks */,
 				7FCBBB1E29521C110041BA3E /* Resources */,
+				5321F40E4CB28B80B61314F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = LiveChat;
+			packageProductDependencies = (
+				7F0A748C29EAD319005AFD42 /* LBTATools */,
+			);
 			productName = LiveChat;
 			productReference = 7FCBBB2029521C110041BA3E /* LiveChat.app */;
 			productType = "com.apple.product-type.application";
@@ -172,6 +306,9 @@
 				Base,
 			);
 			mainGroup = 7FCBBB1729521C110041BA3E;
+			packageReferences = (
+				7F0A748B29EAD319005AFD42 /* XCRemoteSwiftPackageReference "LBTATools" */,
+			);
 			productRefGroup = 7FCBBB2129521C110041BA3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,12 +324,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCBBB3029521C130041BA3E /* LaunchScreen.storyboard in Resources */,
+				7F0A748229E58A52005AFD42 /* photo_placeholder.jpg in Resources */,
+				7F4BB190295889C3006586D3 /* GoogleService-Info.plist in Resources */,
 				7FCBBB2D29521C130041BA3E /* Assets.xcassets in Resources */,
 				7FCBBB2B29521C110041BA3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5321F40E4CB28B80B61314F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveChat/Pods-LiveChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiveChat/Pods-LiveChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiveChat/Pods-LiveChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F584B5C39D2CB8414BE08729 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiveChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7FCBBB1C29521C110041BA3E /* Sources */ = {
@@ -203,11 +384,30 @@
 				7FCBBB402952372F0041BA3E /* CardView.swift in Sources */,
 				7FCBBB2829521C110041BA3E /* HomeController.swift in Sources */,
 				7FCBBB2429521C110041BA3E /* AppDelegate.swift in Sources */,
-				7FCBBB3929521D880041BA3E /* Extensions+UIView.swift in Sources */,
+				7FE1507829DC346B0028A7EA /* AgeRangeCell.swift in Sources */,
+				7F0A749929EC39A4005AFD42 /* AnchoredConst.swift in Sources */,
 				7FA03554295395F5003E07BB /* User.swift in Sources */,
+				7F5E602229E1928C00C02C70 /* UserDetailsController.swift in Sources */,
+				7F977DB229D83711001A3FC1 /* SettingsController.swift in Sources */,
+				7F9DC8E329579E020040FE9D /* RegistirationViewModel.swift in Sources */,
+				7F0A748629E719B2005AFD42 /* MatchView.swift in Sources */,
+				7FEC73B429560B4D00717F2D /* RegistrationController.swift in Sources */,
+				7F0A749729EC1F09005AFD42 /* MessagesNavBar.swift in Sources */,
+				7F0A749029EAD3B3005AFD42 /* MatchesMessagesController.swift in Sources */,
+				7F734A002958DA9900840BBC /* Bindable.swift in Sources */,
+				7F063E9729E4A10200AEFD20 /* SwipingPhotosController.swift in Sources */,
+				7F0A748829E80E19005AFD42 /* SendMessageButton.swift in Sources */,
 				7FCBBB3E29522C8E0041BA3E /* TopNavigationStackView.swift in Sources */,
+				7F0A749B29EC4334005AFD42 /* CustomInputMessageView.swift in Sources */,
+				7FEC73B6295617D000717F2D /* CustomTextField.swift in Sources */,
+				7F5E601B29DEC38B00C02C70 /* LoginController.swift in Sources */,
 				7FCBBB2629521C110041BA3E /* SceneDelegate.swift in Sources */,
 				7FCBBB3C2952239B0041BA3E /* HomeBottomsControlsStackView.swift in Sources */,
+				7F0A748A29E81013005AFD42 /* KeepSwipingButton.swift in Sources */,
+				7F0A749229EAE144005AFD42 /* MatchesNavBar.swift in Sources */,
+				7F977DB429D9AE26001A3FC1 /* SettingsCell.swift in Sources */,
+				7F5E601D29DEC85100C02C70 /* LoginViewModel.swift in Sources */,
+				7F0A749429EC18DD005AFD42 /* ChatLogController.swift in Sources */,
 				7FA035582953A67F003E07BB /* CardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +550,7 @@
 		};
 		7FCBBB3529521C130041BA3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1C25E0DCA8FF879B7B6F69B /* Pods-LiveChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -361,8 +562,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,6 +580,7 @@
 		};
 		7FCBBB3629521C130041BA3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7610FA04734BE59B33061EC /* Pods-LiveChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -389,8 +592,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F0A748B29EAD319005AFD42 /* XCRemoteSwiftPackageReference "LBTATools" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bhlvoong/LBTATools.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F0A748C29EAD319005AFD42 /* LBTATools */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0A748B29EAD319005AFD42 /* XCRemoteSwiftPackageReference "LBTATools" */;
+			productName = LBTATools;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7FCBBB1829521C110041BA3E /* Project object */;
 }
