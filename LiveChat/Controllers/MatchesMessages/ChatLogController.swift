@@ -7,71 +7,19 @@
 
 import LBTATools
 import UIKit
-
-struct Message {
-    let text: String
-    let isFromCurrentLoggedUser: Bool
-}
-
-class MessageCell: LBTAListCell<Message> {
-    
-    let textView: UITextView = {
-       let tv = UITextView()
-        tv.backgroundColor = .clear
-        tv.font = .systemFont(ofSize: 20)
-        tv.isScrollEnabled = false
-        tv.isEditable = false
-        return tv
-    }()
-    
-    let bubbleView = UIView(backgroundColor: UIColor(#colorLiteral(red: 0.8054330945, green: 0.8107859492, blue: 0.8106914759, alpha: 0.8470588235)))
-    
-    override var item: Message! {
-        didSet {
-            textView.text = item.text
-            
-            if item.isFromCurrentLoggedUser {
-                anchoredConstraints.leading?.isActive = false
-                anchoredConstraints.trailing?.isActive = true
-                textView.tintColor = .white
-                bubbleView.backgroundColor = UIColor(#colorLiteral(red: 0.2034923434, green: 0.7475703359, blue: 1, alpha: 0.6253658421))
-            } else {
-                anchoredConstraints.leading?.isActive = true
-                anchoredConstraints.trailing?.isActive = false
-                textView.tintColor = .white
-                bubbleView.backgroundColor = UIColor(#colorLiteral(red: 0.8054330945, green: 0.8107859492, blue: 0.8106914759, alpha: 0.8470588235))
-            }
-        }
-    }
-    
-    var anchoredConstraints: AnchoredConstraints!
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(bubbleView)
-        anchoredConstraints = bubbleView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
-        anchoredConstraints.leading?.constant = 20
-        anchoredConstraints.trailing?.isActive = false
-        anchoredConstraints.trailing?.constant = -20
-        
-        // bu iki satır da şuanki kullanıcının yolladığı mesajların konumunu ayarlıyor yani sağ tarafa hizalıyor bu kodlar olmayınca da sola hizalıyor
-       // anchorConstraints.leading?.isActive = false
-        //anchorConstraints.trailing?.isActive = true
-        
-        
-        bubbleView.widthAnchor.constraint(lessThanOrEqualToConstant: 300).isActive = true
-        bubbleView.layer.cornerRadius = 12
-        
-        bubbleView.addSubview(textView)
-        textView.fillSuperview(padding: .init(top: 5, left: 12, bottom: 5, right: 12))
-    }
-}
+import Firebase
 
 class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionViewDelegateFlowLayout {
     
-    lazy var customInputMessageView: UIView = {
-        return CustomInputMessageView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
+    init(match: Match) {
+        self.match = match
+        super.init()
+    }
+    
+    lazy var customInputMessageView: CustomInputMessageView = {
+        let civ = CustomInputMessageView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
+        civ.sendButton.addTarget(self, action: #selector(handleSend), for: .touchUpInside)
+        return civ
     }()
     
     override var inputAccessoryView: UIView? {
@@ -89,12 +37,7 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
     fileprivate lazy var messageNavBar = MessagesNavBar(match: match)
     
     fileprivate let navBarHeight: CGFloat = 120
-    
-    init(match: Match) {
-        self.match = match
-        super.init()
-    }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -104,13 +47,9 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
         
         collectionView.alwaysBounceVertical = true
         
-        items = [
-            .init(text: "For this lesson, let's talk all about auto sizing message cells and how to shift alignment from left to right.  Doing the alignment correctly within one cell makes it very easy to toggle things based on a chat message's properties later on.  We'll also look at some bug fixes at the end.", isFromCurrentLoggedUser: true),
-            .init(text: "hel", isFromCurrentLoggedUser: false),
-            .init(text: " We'll also look at some ", isFromCurrentLoggedUser: false),
-            .init(text: "For this lesson, let's talk all about auto sizing message cells and how to shift alignment from left to right.  Doing the alignment correctly within one cell makes it very easy to toggle things based on a chat message's properties later on.  We'll also look at some bug fixes at the end. For this lesson, let's talk all about auto sizing message cells and how to shift alignment from left to right.", isFromCurrentLoggedUser: true),
-            .init(text: "For this lesson, let's talk all about auto sizing message cells and how to shift alignment from left to right.  Doing the alignment correctly within one cell makes it very easy to toggle things based on a chat message's properties later on.  We'll also look at some bug fixes at the end.", isFromCurrentLoggedUser: false)
-        ]
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShow), name: UIResponder.keyboardDidShowNotification, object: nil)
+        
+        fetchMessages()
         
         view.addSubview(messageNavBar)
         messageNavBar.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: navBarHeight))
@@ -123,6 +62,66 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
         let statusBarCover = UIView(backgroundColor: .white)
         view.addSubview(statusBarCover)
         statusBarCover.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.topAnchor, trailing: view.trailingAnchor)
+    }
+    
+    @objc fileprivate func handleKeyboardShow() {
+        self.collectionView.scrollToItem(at: [0, items.count - 1], at: .bottom, animated: true)
+    }
+    
+    @objc fileprivate func handleSend() {
+        
+        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        let collection = Firestore.firestore().collection("matches_messages").document(currentUserId).collection(match.uid)
+        
+        let data = ["text": customInputMessageView.textView.text ?? "", "fromId": currentUserId, "toId": match.uid, "timestamp": Timestamp(date: Date())] as [String : Any]
+        
+        collection.addDocument(data: data) { (err) in
+            if let err = err {
+                print("Failed to save message:", err)
+                return
+            }
+            
+            print("Successfully saved msg into Firestore")
+            self.customInputMessageView.textView.text = nil
+            self.customInputMessageView.placeholderText.isHidden = false
+        }
+        
+        let toCollection = Firestore.firestore().collection("matches_messages").document(match.uid).collection(currentUserId)
+        
+        toCollection.addDocument(data: data) { (err) in
+            if let err = err {
+                print("Failed to save message:", err)
+                return
+            }
+            
+            print("Successfully saved msg into Firestore")
+            self.customInputMessageView.textView.text = nil
+            self.customInputMessageView.placeholderText.isHidden = false
+        }
+    }
+    
+    @objc fileprivate func fetchMessages() {
+        
+        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        
+        let query = Firestore.firestore().collection("matches_messages").document(currentUserId).collection(match.uid).order(by: "timestamp")
+        
+        query.addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                print("failed to fetch messages, ", error)
+                return
+            }
+            
+            querySnapshot?.documentChanges.forEach({ (change) in
+                if change.type == .added {
+                    let dict = change.document.data()
+                    self.items.append(.init(dictionary: dict))
+                }
+            })
+            self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: [0, self.items.count - 1], at: .bottom, animated: true)
+        }
+        
     }
     
     @objc fileprivate func handleBack() {

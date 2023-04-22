@@ -40,7 +40,6 @@ class HomeController: UIViewController, SettingsControllerDelegate, LoginControl
     
     @objc fileprivate func handleMessage() {
         let vc = MatchesMessagesController()
-        vc.view.backgroundColor = .red
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -237,24 +236,22 @@ class HomeController: UIViewController, SettingsControllerDelegate, LoginControl
                 
                 guard let cardUser = self.users[cardUUID] else { return }
                 
-                let data = ["name": cardUser.name ?? "", "profileImageUrl": cardUser.imageUrl1 ?? "", "uid": uid, "timestamp": Timestamp(date: Date())]
-                
-                Firestore.firestore().collection("matches_messages").document(uid).collection("matches").document(cardUUID).setData(data, completion: { (error) in
-                    if error != nil {
-                        return
+                let data = ["name": cardUser.name ?? "", "profileImageUrl": cardUser.imageUrl1 ?? "", "uid": cardUUID, "timestamp": Timestamp(date: Date())] as [String : Any]
+                Firestore.firestore().collection("matches_messages").document(uid).collection("matches").document(cardUUID).setData(data, completion: { (err) in
+                    if let err = err {
+                        print("Failed to save match info:", err)
                     }
                 })
                 
                 guard let currentUser = self.user else { return }
                 
-                let currentUserData = ["name": currentUser.name ?? "", "profileImageUrl": currentUser.imageUrl1 ?? "", "uid": cardUUID, "timestamp": Timestamp(date: Date())]
-                
-                Firestore.firestore().collection("matches_messages").document(cardUUID).collection("matches").document(uid).setData(data, completion: { (error) in
-                    if error != nil {
-                        return
+                let otherMatchData = ["name": currentUser.name ?? "", "profileImageUrl": currentUser.imageUrl1 ?? "", "uid": currentUser.uid
+                     ?? "", "timestamp": Timestamp(date: Date())] as [String : Any]
+                Firestore.firestore().collection("matches_messages").document(cardUUID).collection("matches").document(uid).setData(otherMatchData, completion: { (err) in
+                    if let err = err {
+                        print("Failed to save match info:", err)
                     }
                 })
-                
             }
         }
     }
@@ -332,14 +329,6 @@ class HomeController: UIViewController, SettingsControllerDelegate, LoginControl
         fetchCurrentUser()
     }
 
-    fileprivate func setupFirestoreUserCards() {
-        cardViewModels.forEach { (cardVM) in
-            let cardView = CardView(frame: .zero)
-            cardView.cardViewModel = cardVM
-            cardsDeckView.addSubview(cardView)//görüntü üzerine görüntü ekledik
-            cardView.fillSuperview()
-        }
-    }
     
     // MARK: -Fileprivate
     

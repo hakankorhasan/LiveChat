@@ -11,11 +11,12 @@ import SDWebImage
 import Firebase
 
 struct Match {
-    let name, profileImageUrl: String
+    let name, profileImageUrl, uid: String
     
     init(dictionary: [String: Any]) {
         self.name = dictionary["name"] as? String ?? ""
         self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
+        self.uid = dictionary["uid"] as? String ?? ""
     }
 }
 
@@ -29,7 +30,6 @@ class MatchCell: LBTAListCell<Match> {
         didSet {
             usernameLabel.text = item.name
             profileImageView.sd_setImage(with: URL(string: item.profileImageUrl))
-            
         }
     }
     
@@ -62,12 +62,6 @@ class MatchesMessagesController: LBTAListController<MatchCell, Match>, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*items = [
-            .init(name: "Full namer", profileImageUrl: "https://firebasestorage.googleapis.com:443/v0/b/livec-81519.appspot.com/o/images%2F48C1CA52-E367-4A2F-AB54-F7CDF9615888?alt=media&token=15e24de0-3c3c-4ab9-901c-75d5dd4e6eb1"),
-            .init(name: "Full namer", profileImageUrl: "https://firebasestorage.googleapis.com:443/v0/b/livec-81519.appspot.com/o/images%2FD7A446D2-864D-40D1-BB9B-79E8B117CFBF?alt=media&token=82ab8440-dcc5-45dd-bada-917349d42748"),
-            .init(name: "Full namer", profileImageUrl: "profile imge url")
-        ]*/
-        
         fetcheMatches()
         
         collectionView.backgroundColor = .white
@@ -81,6 +75,7 @@ class MatchesMessagesController: LBTAListController<MatchCell, Match>, UICollect
     }
     
     fileprivate func fetcheMatches() {
+        
         guard let currentUser = Auth.auth().currentUser?.uid else { return }
         
         Firestore.firestore().collection("matches_messages").document(currentUser).collection("matches").getDocuments { (querySnapshot, error) in
@@ -92,9 +87,9 @@ class MatchesMessagesController: LBTAListController<MatchCell, Match>, UICollect
             var matches = [Match]()
             
             querySnapshot?.documents.forEach({ (documentSnapshot) in
-                print(documentSnapshot.data())
                 let dictionary = documentSnapshot.data()
                 matches.append(.init(dictionary: dictionary))
+                print(matches)
             })
             
             self.items = matches
