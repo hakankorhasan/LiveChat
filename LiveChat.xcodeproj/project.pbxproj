@@ -44,6 +44,7 @@
 		7FD3B5D129F3E4CA007CDAD0 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3B5D029F3E4CA007CDAD0 /* MessageCell.swift */; };
 		7FD3B5D329F48BF2007CDAD0 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3B5D229F48BF2007CDAD0 /* Match.swift */; };
 		7FD3B5D529F48C24007CDAD0 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3B5D429F48C24007CDAD0 /* MatchCell.swift */; };
+		7FD3B5D729F54424007CDAD0 /* MatchesHorizontalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3B5D629F54424007CDAD0 /* MatchesHorizontalController.swift */; };
 		7FE1507829DC346B0028A7EA /* AgeRangeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE1507729DC346B0028A7EA /* AgeRangeCell.swift */; };
 		7FEC73B429560B4D00717F2D /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC73B329560B4D00717F2D /* RegistrationController.swift */; };
 		7FEC73B6295617D000717F2D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEC73B5295617D000717F2D /* CustomTextField.swift */; };
@@ -87,6 +88,7 @@
 		7FD3B5D029F3E4CA007CDAD0 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		7FD3B5D229F48BF2007CDAD0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		7FD3B5D429F48C24007CDAD0 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		7FD3B5D629F54424007CDAD0 /* MatchesHorizontalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesHorizontalController.swift; sourceTree = "<group>"; };
 		7FE1507729DC346B0028A7EA /* AgeRangeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRangeCell.swift; sourceTree = "<group>"; };
 		7FEC73B329560B4D00717F2D /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		7FEC73B5295617D000717F2D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				7F0A748F29EAD3B3005AFD42 /* MatchesMessagesController.swift */,
 				7F0A749329EC18DD005AFD42 /* ChatLogController.swift */,
+				7FD3B5D629F54424007CDAD0 /* MatchesHorizontalController.swift */,
 			);
 			path = MatchesMessages;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				7F063E9729E4A10200AEFD20 /* SwipingPhotosController.swift in Sources */,
 				7F0A748829E80E19005AFD42 /* SendMessageButton.swift in Sources */,
 				7FCBBB3E29522C8E0041BA3E /* TopNavigationStackView.swift in Sources */,
+				7FD3B5D729F54424007CDAD0 /* MatchesHorizontalController.swift in Sources */,
 				7FD3B5D329F48BF2007CDAD0 /* Match.swift in Sources */,
 				7F0A749B29EC4334005AFD42 /* CustomInputMessageView.swift in Sources */,
 				7FEC73B6295617D000717F2D /* CustomTextField.swift in Sources */,
