@@ -10,7 +10,20 @@ import LBTATools
 import SDWebImage
 import Firebase
 
-class RecentMessageCell: LBTAListCell<UIColor> {
+struct RecentMessage {
+    let text, name, profileImageUrl, uid: String
+    let timestamp: Timestamp
+    
+    init(dictionary: [String: Any]) {
+        self.text = dictionary["text"] as? String ?? ""
+        self.name = dictionary["name"] as? String ?? ""
+        self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
+        self.uid = dictionary["uid"] as? String ?? ""
+        self.timestamp = dictionary["timestamp"] as? Timestamp ?? Timestamp(date: Date())
+    }
+}
+
+class RecentMessageCell: LBTAListCell<RecentMessage> {
     
     let profileImageView = UIImageView(image: #imageLiteral(resourceName: "kelly3"), contentMode: .scaleAspectFill)
     
@@ -18,9 +31,11 @@ class RecentMessageCell: LBTAListCell<UIColor> {
     
     let messageLabel = UILabel(text: "Im hakan. Nice to meet you. how are you?", font: .systemFont(ofSize: 15), textColor: .gray, numberOfLines: 0)
     
-    override var item: UIColor! {
+    override var item: RecentMessage! {
         didSet {
-            
+            usernameLabel.text = item.name
+            messageLabel.text = item.text
+            profileImageView.sd_setImage(with: URL(string: item.profileImageUrl))
         }
     }
     
@@ -60,7 +75,38 @@ class MatchesHeader: UICollectionReusableView {
 
 
 
-class MatchesMessagesController: LBTAListHeaderController<RecentMessageCell, UIColor, MatchesHeader>, UICollectionViewDelegateFlowLayout {
+class MatchesMessagesController: LBTAListHeaderController<RecentMessageCell, RecentMessage, MatchesHeader>, UICollectionViewDelegateFlowLayout {
+    
+    var recentMessagesDictionary = [String: RecentMessage]()
+    
+    @objc fileprivate func fetchRecentMessage() {
+        
+        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        
+        Firestore.firestore().collection("matches_messages").document(currentUserId).collection("recent_messages").addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                return
+            }
+            
+            querySnapshot?.documentChanges.forEach({ (change) in
+                if change.type == .added || change.type == .modified {
+                    let dictionary = change.document.data()
+                    let recentMessage = RecentMessage(dictionary: dictionary)
+                    self.recentMessagesDictionary[recentMessage.uid] = recentMessage
+                }
+            })
+            
+            self.resetItems()
+        }
+    }
+    
+    fileprivate func resetItems() {
+        let values = Array(recentMessagesDictionary.values)
+        items = values.sorted(by: { (rm1, rm2) -> Bool in
+            return rm1.timestamp.compare(rm2.timestamp) == .orderedDescending
+        })
+        collectionView.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
@@ -85,10 +131,12 @@ class MatchesMessagesController: LBTAListHeaderController<RecentMessageCell, UIC
         return .init(width: view.frame.width, height: 130)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        items = [.red, .blue, .black, .cyan]
+        fetchRecentMessage()
+      
         setupUI()
         
     }
