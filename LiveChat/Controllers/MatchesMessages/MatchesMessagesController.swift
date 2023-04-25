@@ -100,6 +100,14 @@ class MatchesMessagesController: LBTAListHeaderController<RecentMessageCell, Rec
         }
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let recentMessage = self.items[indexPath.item]
+        let dictionary = ["name": recentMessage.name, "profileImageUrl": recentMessage.profileImageUrl, "uid": recentMessage.uid]
+        let match = Match(dictionary: dictionary)
+        let controller = ChatLogController(match: match)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     fileprivate func resetItems() {
         let values = Array(recentMessagesDictionary.values)
         items = values.sorted(by: { (rm1, rm2) -> Bool in

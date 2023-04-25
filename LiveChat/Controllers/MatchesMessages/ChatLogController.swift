@@ -42,8 +42,23 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
         fatalError("init(coder:) has not been implemented")
     }
     
+    var currentUser: User?
+    
+    fileprivate func fetchCurrentUser() {
+        Firestore.firestore().collection("users").document(Auth.auth().currentUser?.uid ?? "").getDocument { (snapshot, err) in
+            if let err = err {
+                return
+            }
+            
+            let data = snapshot?.data() ?? [:]
+            self.currentUser = User(dictionary: data)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchCurrentUser()
         
         collectionView.alwaysBounceVertical = true
         
@@ -70,6 +85,31 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
     
     @objc fileprivate func handleSend() {
         
+        saveToFromMessages()
+        saveToFromRecentMessages()
+        
+    }
+    
+    fileprivate func saveToFromRecentMessages() {
+        guard let currentUserId = Auth.auth().currentUser?.uid else { return }
+        
+        let data = ["text": customInputMessageView.textView.text ?? "", "name": match.name, "profileImageUrl": match.profileImageUrl, "uid": match.uid, "timestamp": Timestamp(date: Date())] as [String: Any]
+        
+        Firestore.firestore().collection("matches_messages").document(currentUserId).collection("recent_messages").document(match.uid).setData(data) { (error) in
+            
+            if let error = error {
+                return
+            }
+        }
+        
+        guard let currentUser = self.currentUser else { return }
+        
+        let toData = ["text": customInputMessageView.textView.text ?? "", "name": currentUser.name ?? "", "profileImageUrl": currentUser.imageUrl1 ?? "", "uid": currentUserId, "timestamp": Timestamp(date: Date())] as [String: Any]
+        
+        Firestore.firestore().collection("matches_messages").document(match.uid).collection("recent_messages").document(currentUserId).setData(toData)
+    }
+    
+    fileprivate func saveToFromMessages() {
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
         let collection = Firestore.firestore().collection("matches_messages").document(currentUserId).collection(match.uid)
         
