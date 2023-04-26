@@ -11,6 +11,10 @@ import Firebase
 
 class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionViewDelegateFlowLayout {
     
+    deinit {
+        print("deinit blok")
+    }
+    
     init(match: Match) {
         self.match = match
         super.init()
@@ -140,13 +144,15 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
         }
     }
     
+    var listener: ListenerRegistration?
+    
     @objc fileprivate func fetchMessages() {
         
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
         
         let query = Firestore.firestore().collection("matches_messages").document(currentUserId).collection(match.uid).order(by: "timestamp")
         
-        query.addSnapshotListener { (querySnapshot, error) in
+        listener = query.addSnapshotListener { (querySnapshot, error) in
             if let error = error {
                 print("failed to fetch messages, ", error)
                 return
@@ -162,6 +168,14 @@ class ChatLogController: LBTAListController<MessageCell, Message>, UICollectionV
             self.collectionView.scrollToItem(at: [0, self.items.count - 1], at: .bottom, animated: true)
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            listener?.remove()
+        }
     }
     
     @objc fileprivate func handleBack() {

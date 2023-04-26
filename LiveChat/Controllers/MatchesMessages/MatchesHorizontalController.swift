@@ -11,13 +11,14 @@ import Firebase
 
 class MatchesHorizontalController: LBTAListController<MatchCell, Match>, UICollectionViewDelegateFlowLayout {
     
-    var rootMatchesController = MatchesMessagesController()
+    //weak koyarak deinit bloka girmesini sağladık
+    weak var rootMatchesController: MatchesMessagesController?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let match = self.items[indexPath.item]
         //let cg = ChatLogController(match: match)
        // navigationController?.pushViewController(cg, animated: true)
-        rootMatchesController.didSelectFromHeader(match: match)
+        rootMatchesController?.didSelectFromHeader(match: match)
         
     }
     
@@ -47,7 +48,6 @@ class MatchesHorizontalController: LBTAListController<MatchCell, Match>, UIColle
             querySnapshot?.documents.forEach({ (documentSnapshot) in
                 let dictionary = documentSnapshot.data()
                 matches.append(.init(dictionary: dictionary))
-                print(matches)
             })
             
             self.items = matches

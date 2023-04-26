@@ -79,11 +79,28 @@ class MatchesMessagesController: LBTAListHeaderController<RecentMessageCell, Rec
     
     var recentMessagesDictionary = [String: RecentMessage]()
     
+    var listener: ListenerRegistration?
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            listener?.remove()
+        }
+        //bu kod bloğu olmazsa kullanılan memory her mesajlara bakıldığında artacak veriler hafızadan silinmeyecek ve bir süre sonra hafıza da yoğunluk meydana gelecek
+    }
+    
+    deinit {
+        print("deinit blok MatchesMessages")
+    }
+    
     @objc fileprivate func fetchRecentMessage() {
         
         guard let currentUserId = Auth.auth().currentUser?.uid else { return }
         
-        Firestore.firestore().collection("matches_messages").document(currentUserId).collection("recent_messages").addSnapshotListener { (querySnapshot, error) in
+        let query =  Firestore.firestore().collection("matches_messages").document(currentUserId).collection("recent_messages")
+        
+        listener = query.addSnapshotListener { (querySnapshot, error) in
             if let error = error {
                 return
             }
