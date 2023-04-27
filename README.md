@@ -5,7 +5,7 @@
 
 ![Register](images/register.jpeg) ![Register](images/login.jpeg)
 
-# Home
+# Home & Detail
 
 ![Register](images/home.jpeg) ![Register](images/detail.jpeg)
 
