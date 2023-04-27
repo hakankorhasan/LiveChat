@@ -244,6 +244,7 @@
 		7FCBBB1729521C110041BA3E = {
 			isa = PBXGroup;
 			children = (
+				7FAE1FA729FAAD0B00719FC1 /* README.md */,
 				7FCBBB2229521C110041BA3E /* LiveChat */,
 				7FCBBB2129521C110041BA3E /* Products */,
 				1B7625F1056939138D5735A6 /* Pods */,
@@ -276,7 +277,6 @@
 				7F0A748129E58A52005AFD42 /* photo_placeholder.jpg */,
 				7FCBBB2E29521C130041BA3E /* LaunchScreen.storyboard */,
 				7FCBBB3129521C130041BA3E /* Info.plist */,
-				7FAE1FA729FAAD0B00719FC1 /* README.md */,
 			);
 			path = LiveChat;
 			sourceTree = "<group>";
