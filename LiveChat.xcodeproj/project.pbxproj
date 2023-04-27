@@ -31,6 +31,15 @@
 		7F9DC8E329579E020040FE9D /* RegistirationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DC8E229579E020040FE9D /* RegistirationViewModel.swift */; };
 		7FA03554295395F5003E07BB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA03553295395F4003E07BB /* User.swift */; };
 		7FA035582953A67F003E07BB /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA035572953A67F003E07BB /* CardViewModel.swift */; };
+		7FAE1F9E29FAAC9400719FC1 /* matches.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9529FAAC9300719FC1 /* matches.jpeg */; };
+		7FAE1F9F29FAAC9400719FC1 /* match.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9629FAAC9300719FC1 /* match.jpeg */; };
+		7FAE1FA029FAAC9400719FC1 /* chatlog.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9729FAAC9300719FC1 /* chatlog.jpeg */; };
+		7FAE1FA129FAAC9400719FC1 /* register.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9829FAAC9300719FC1 /* register.jpeg */; };
+		7FAE1FA229FAAC9400719FC1 /* login.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9929FAAC9400719FC1 /* login.jpeg */; };
+		7FAE1FA329FAAC9400719FC1 /* settings.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9A29FAAC9400719FC1 /* settings.jpeg */; };
+		7FAE1FA429FAAC9400719FC1 /* chatlog2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9B29FAAC9400719FC1 /* chatlog2.jpeg */; };
+		7FAE1FA529FAAC9400719FC1 /* detail.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9C29FAAC9400719FC1 /* detail.jpeg */; };
+		7FAE1FA629FAAC9400719FC1 /* home.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7FAE1F9D29FAAC9400719FC1 /* home.jpeg */; };
 		7FCBBB2429521C110041BA3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2329521C110041BA3E /* AppDelegate.swift */; };
 		7FCBBB2629521C110041BA3E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2529521C110041BA3E /* SceneDelegate.swift */; };
 		7FCBBB2829521C110041BA3E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBBB2729521C110041BA3E /* HomeController.swift */; };
@@ -73,6 +82,16 @@
 		7F9DC8E229579E020040FE9D /* RegistirationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistirationViewModel.swift; sourceTree = "<group>"; };
 		7FA03553295395F4003E07BB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FA035572953A67F003E07BB /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		7FAE1F9529FAAC9300719FC1 /* matches.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = matches.jpeg; sourceTree = "<group>"; };
+		7FAE1F9629FAAC9300719FC1 /* match.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = match.jpeg; sourceTree = "<group>"; };
+		7FAE1F9729FAAC9300719FC1 /* chatlog.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chatlog.jpeg; sourceTree = "<group>"; };
+		7FAE1F9829FAAC9300719FC1 /* register.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = register.jpeg; sourceTree = "<group>"; };
+		7FAE1F9929FAAC9400719FC1 /* login.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpeg; sourceTree = "<group>"; };
+		7FAE1F9A29FAAC9400719FC1 /* settings.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = settings.jpeg; sourceTree = "<group>"; };
+		7FAE1F9B29FAAC9400719FC1 /* chatlog2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chatlog2.jpeg; sourceTree = "<group>"; };
+		7FAE1F9C29FAAC9400719FC1 /* detail.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = detail.jpeg; sourceTree = "<group>"; };
+		7FAE1F9D29FAAC9400719FC1 /* home.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home.jpeg; sourceTree = "<group>"; };
+		7FAE1FA729FAAD0B00719FC1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7FCBBB2029521C110041BA3E /* LiveChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FCBBB2329521C110041BA3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FCBBB2529521C110041BA3E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +225,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		7FAE1F9429FAAC6F00719FC1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				7FAE1F9629FAAC9300719FC1 /* match.jpeg */,
+				7FAE1F9D29FAAC9400719FC1 /* home.jpeg */,
+				7FAE1F9C29FAAC9400719FC1 /* detail.jpeg */,
+				7FAE1F9A29FAAC9400719FC1 /* settings.jpeg */,
+				7FAE1F9529FAAC9300719FC1 /* matches.jpeg */,
+				7FAE1F9729FAAC9300719FC1 /* chatlog.jpeg */,
+				7FAE1F9B29FAAC9400719FC1 /* chatlog2.jpeg */,
+				7FAE1F9829FAAC9300719FC1 /* register.jpeg */,
+				7FAE1F9929FAAC9400719FC1 /* login.jpeg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		7FCBBB1729521C110041BA3E = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +262,7 @@
 		7FCBBB2229521C110041BA3E /* LiveChat */ = {
 			isa = PBXGroup;
 			children = (
+				7FAE1F9429FAAC6F00719FC1 /* images */,
 				7FA035562953A66C003E07BB /* ViewModels */,
 				7FA035552953A65A003E07BB /* Controllers */,
 				7FA03552295395E9003E07BB /* Model */,
@@ -240,6 +276,7 @@
 				7F0A748129E58A52005AFD42 /* photo_placeholder.jpg */,
 				7FCBBB2E29521C130041BA3E /* LaunchScreen.storyboard */,
 				7FCBBB3129521C130041BA3E /* Info.plist */,
+				7FAE1FA729FAAD0B00719FC1 /* README.md */,
 			);
 			path = LiveChat;
 			sourceTree = "<group>";
@@ -340,8 +377,17 @@
 			files = (
 				7FCBBB3029521C130041BA3E /* LaunchScreen.storyboard in Resources */,
 				7F0A748229E58A52005AFD42 /* photo_placeholder.jpg in Resources */,
+				7FAE1FA129FAAC9400719FC1 /* register.jpeg in Resources */,
+				7FAE1FA329FAAC9400719FC1 /* settings.jpeg in Resources */,
+				7FAE1FA429FAAC9400719FC1 /* chatlog2.jpeg in Resources */,
+				7FAE1F9F29FAAC9400719FC1 /* match.jpeg in Resources */,
 				7F4BB190295889C3006586D3 /* GoogleService-Info.plist in Resources */,
+				7FAE1FA629FAAC9400719FC1 /* home.jpeg in Resources */,
 				7FCBBB2D29521C130041BA3E /* Assets.xcassets in Resources */,
+				7FAE1F9E29FAAC9400719FC1 /* matches.jpeg in Resources */,
+				7FAE1FA029FAAC9400719FC1 /* chatlog.jpeg in Resources */,
+				7FAE1FA529FAAC9400719FC1 /* detail.jpeg in Resources */,
+				7FAE1FA229FAAC9400719FC1 /* login.jpeg in Resources */,
 				7FCBBB2B29521C110041BA3E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

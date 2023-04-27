@@ -15,6 +15,10 @@ class CustomImagePickerController: UIImagePickerController {
 
 class SettingsController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    deinit {
+        print("destroy object for settings")
+    }
+    
     var delegate: SettingsControllerDelegate?
     
     // instance properties
