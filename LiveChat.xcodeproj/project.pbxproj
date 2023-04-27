@@ -244,6 +244,7 @@
 		7FCBBB1729521C110041BA3E = {
 			isa = PBXGroup;
 			children = (
+				7FAE1F9429FAAC6F00719FC1 /* images */,
 				7FAE1FA729FAAD0B00719FC1 /* README.md */,
 				7FCBBB2229521C110041BA3E /* LiveChat */,
 				7FCBBB2129521C110041BA3E /* Products */,
@@ -263,7 +264,6 @@
 		7FCBBB2229521C110041BA3E /* LiveChat */ = {
 			isa = PBXGroup;
 			children = (
-				7FAE1F9429FAAC6F00719FC1 /* images */,
 				7FA035562953A66C003E07BB /* ViewModels */,
 				7FA035552953A65A003E07BB /* Controllers */,
 				7FA03552295395E9003E07BB /* Model */,
